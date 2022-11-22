@@ -21,7 +21,20 @@ function Find Hyponyms and Hypernyms and Attach with Preprocessed FAQ (preproces
 end function
 
 function Create New Hybrid Dataset (preprocessed FAQ, preprocessed FAQ's Answer, preprocessed FAQ with Hyponyms and Hypernyms):
+    ''' 
+    the hybrid dataset includes 7 (seven) features: 
+    1. Question: Given questions in the FAQ dataset.
+    2. Answer: Given Answers in the FAQ dataset.
+    3. Preprocessed FAQ: Preprocessed Questions.
+    4. Preprocessed FAQ Answer:Preprocessed Answers.
+    5. Preprocessed FAQ with hyperhypo: Preprocessed questions with their hyponyms and hypernyms.
+    6. Corpus: combination of Preprocessed FAQ and Preprocessed FAQ Answer.
+    7. Corpus New: Preprocessed FAQ with hyperhypo and Preprocessed FAQ Answer. 
     
+    Here feature 3 to 7 are base features.
+    '''
+    return Hybrid Dataset
+end function
     
 
 ```
