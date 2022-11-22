@@ -1,11 +1,12 @@
 from function_FAQ_test import *
-modified_df = pd.read_csv('data.csv')
+modified_df_path = '/home/taufiq/Desktop/NLP_Assignment/Taufiq_ML_NLP task_VScode/hybrid_dataset.csv'
+modified_df = pd.read_csv(modified_df_path)
 FAQs_test_link = "https://raw.githubusercontent.com/Muhammad-Taufiq-Khan/TAUFIQ-NLP-Task-ML-Headless-Technologies-Limited/main/FAQs_test.csv"
 df_test = pd.read_csv(FAQs_test_link)
 
 
 # Test All FAQ test with multiple base features
-# base_feature_names = ['preprocessed_FAQ', 'FAQ_with_hyperhypo', 'Corpus', 'Corpus_new', 'Corpus_with_hyperhypo']
+# base_feature_names = ['preprocessed_FAQ', 'FAQ_with_hyperhypo', 'Corpus', 'Corpus_new']
 # for i, base_feature in enumerate(base_feature_names):
 #     print(f"\n #{i+1}. Base Feature: {base_feature}")
 #     for question in df_test['Question']:

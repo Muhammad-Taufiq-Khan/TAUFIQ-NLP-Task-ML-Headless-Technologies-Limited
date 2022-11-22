@@ -1,7 +1,7 @@
 # Functions to process single test question
 
 from dependencies import *
-from functions import hypernyms, hyponyms, nlp, stpwrd
+from functions_FAQ import hypernyms, hyponyms, nlp, stpwrd
 
 
 '''# FUNCTION 06: Function to preprocess test FAQ'''

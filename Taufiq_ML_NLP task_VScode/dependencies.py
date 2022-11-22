@@ -1,3 +1,6 @@
+# import sys
+# sys.path.insert(0,'/home/taufiq/Desktop/NLP_Assignment/Taufiq_VScode_NLPtask')
+
 import warnings
 warnings.simplefilter("ignore")
 import pandas as pd # data manipulation

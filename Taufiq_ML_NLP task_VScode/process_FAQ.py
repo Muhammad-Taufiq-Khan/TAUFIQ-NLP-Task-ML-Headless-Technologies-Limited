@@ -1,4 +1,4 @@
-from functions import *
+from functions_FAQ import *
 
 """ FETCH DATA """
 FAQs_link = "https://raw.githubusercontent.com/Muhammad-Taufiq-Khan/TAUFIQ-NLP-Task-ML-Headless-Technologies-Limited/main/FAQs.csv"
@@ -14,8 +14,9 @@ preprocessed_FAQ_Ans = preprocessing(df_len, df['Answer'])                      
 """ ATTACHING HYPONYMS AND HYPERNYMS WITH PREPROCESSED TEXTS """
 threshold = 0.6 # hyperhypo similarity threshold
 FAQ_with_hyperhypo = attach_hyperhypo(preprocessed_FAQ, threshold)             ;print('Attaching hyper-hypo done - FAQ')
-FAQ_Ans_with_hyperhypo = attach_hyperhypo(preprocessed_FAQ_Ans, threshold)     ;print('Attaching hyper-hypo done - FAQ Ans')
+# FAQ_Ans_with_hyperhypo = attach_hyperhypo(preprocessed_FAQ_Ans, threshold)     ;print('Attaching hyper-hypo done - FAQ Ans')
 
 
 """ CREATING HYBRID DATASET """
-create_modified_dataset(df, 'hybrid_dataset.csv', preprocessed_FAQ, preprocessed_FAQ_Ans, FAQ_with_hyperhypo, FAQ_Ans_with_hyperhypo)
+create_modified_dataset(df, 'hybrid_dataset.csv', preprocessed_FAQ, preprocessed_FAQ_Ans, FAQ_with_hyperhypo)
+

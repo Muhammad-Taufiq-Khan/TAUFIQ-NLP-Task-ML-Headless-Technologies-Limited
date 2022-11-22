@@ -84,17 +84,17 @@ def attach_hyperhypo(preprocessed_texts: list, hyperhypo_similarity_threshold: f
 
 
 ''' # FUNCTION 05: Create Modified Dataset'''
-def create_modified_dataset(base_df, new_df_name: str, preprocessed_FAQ: list, preprocessed_FAQ_Ans: list, FAQ_with_hyperhypo: list, FAQ_Ans_with_hyperhypo: list):
+def create_modified_dataset(base_df, new_df_name: str, preprocessed_FAQ: list, preprocessed_FAQ_Ans: list, FAQ_with_hyperhypo: list):  
     df_new = base_df.copy()
     len_of_base_df = len(base_df)
-    df_new['preprocessed_FAQ'], df_new['preprocessed_FAQ_Ans'], df_new['FAQ_with_hyperhypo'], df_new['FAQ_Ans_with_hyperhypo'] = [preprocessed_FAQ, preprocessed_FAQ_Ans, FAQ_with_hyperhypo, FAQ_Ans_with_hyperhypo]
+    df_new['preprocessed_FAQ'], df_new['preprocessed_FAQ_Ans'], df_new['FAQ_with_hyperhypo'] = [preprocessed_FAQ, preprocessed_FAQ_Ans, FAQ_with_hyperhypo]
     Corpus = list(zip(preprocessed_FAQ, preprocessed_FAQ_Ans))                      # combination of preprocessed FAQs and preprocessed Answers
     Corpus = preprocessing(len_of_base_df, Corpus)
     Corpus_new = list(zip(FAQ_with_hyperhypo, preprocessed_FAQ_Ans))                # combination of preprocessed FAQs with hypernyms-hyponyms and preprocessed Answers
     Corpus_new = preprocessing(len_of_base_df, Corpus_new)
-    Corpus_with_hyperhypo = list(zip(FAQ_with_hyperhypo,FAQ_Ans_with_hyperhypo ))   # combination of preprocessed FAQs with hypernyms-hyponyms and preprocessed Answers with hypernyms-hyponyms
-    Corpus_with_hyperhypo = preprocessing(len_of_base_df, Corpus_with_hyperhypo)
+    # Corpus_with_hyperhypo = list(zip(FAQ_with_hyperhypo,FAQ_Ans_with_hyperhypo )) # FAQ_Ans_with_hyperhypo: list; combination of preprocessed FAQs with hypernyms-hyponyms and preprocessed Answers with hypernyms-hyponyms
+    # Corpus_with_hyperhypo = preprocessing(len_of_base_df, Corpus_with_hyperhypo)
     df_new['Corpus'] = Corpus
     df_new['Corpus_new'] = Corpus_new
-    df_new['Corpus_with_hyperhypo'] =  Corpus_with_hyperhypo
-    df_new.to_csv(new_df_name); print('Hybrid dataset creation done')
+    # df_new['Corpus_with_hyperhypo'] =  Corpus_with_hyperhypo
+    df_new.to_csv('Taufiq_ML_NLP task_VScode/'+new_df_name); print('Hybrid dataset creation done')
