@@ -35,6 +35,15 @@ function Create New Hybrid Dataset (preprocessed FAQ, preprocessed FAQ's Answer,
     '''
     return Hybrid Dataset
 end function
-    
 
+function Process FAQ-test data (FAQ-test question):
+    preprocess FAQ-test question                                                 //according to previous preprocessing
+    find hyponyms and hypernyms and attach with preprocessed FAQ-test question   //according to previous preprocessing
+        // here we consider 82% similar hyponyms and hypernyms
+    return preprocessed FAQ-test question, preprocessed FAQ-test question with hyponyms and hypernyms and hyponyms
+end function
+
+function Validate the Approach (preprocessed FAQ-test question, preprocessed FAQ-test question with hyponyms and hypernyms and hyponyms):
+    for feature in base features:
+        
 ```
