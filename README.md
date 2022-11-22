@@ -40,10 +40,41 @@ function Process FAQ-test data (FAQ-test question):
     preprocess FAQ-test question                                                 //according to previous preprocessing
     find hyponyms and hypernyms and attach with preprocessed FAQ-test question   //according to previous preprocessing
         // here we consider 82% similar hyponyms and hypernyms
-    return preprocessed FAQ-test question, preprocessed FAQ-test question with hyponyms and hypernyms and hyponyms
+    return preprocessed FAQ-test question with hyperhypo
 end function
 
-function Validate the Approach (preprocessed FAQ-test question, preprocessed FAQ-test question with hyponyms and hypernyms and hyponyms):
+function Validate the Approach (preprocessed FAQ-test question with hyperhypo):
     for feature in base features:
-        
+        for question in feature:
+            if preprocessed FAQ-test question with hyperhypo and question include any similar word:
+                consider that question as most similar question
+            end if 
+            else:
+                check similarity between preprocessed FAQ-test question with hyperhypo and question
+                consider question with max similarity score
+                if there is any question with similarity >= max similarity score - 10%
+                    also consider that question
+                end if
+            end else
+        end for 
+    end for
+    return best base feature, result
+end function
+
+function Test Question Answer (Asked Qestion, Best Base Feature):
+    Asked Qestion = Process FAQ-test data (Asked Qestion)
+    for question in Best Base Feature: 
+        if Asked Qestion and qestion include any similar word:
+            consider that question as most similar question
+        end if 
+        else:
+            check similarity between Asked Qestion and question
+            consider question with max similarity score
+            if there is any question with similarity >= max similarity score - 10%
+                also consider that question
+            end if
+        end else 
+    end for 
+    return Answer of the considered qestions
+end function
 ```
